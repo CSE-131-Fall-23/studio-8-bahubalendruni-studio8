@@ -26,7 +26,19 @@ public class Quiz {
 	}
 	
 	public void takeQuiz() {
-		//FIXME
+		int sum = 0;
+		for (int i = 0; i<questions.length; i++){
+			questions[i].displayPrompt();
+			String x = getUserAnswer();
+			if (questions[i].checkAnswer(x)==0){
+				
+				System.out.println("You got " + x + " Which is incorrect, the correct answer is " + questions[i].getAnswer());
+			}
+			else {
+				sum = sum + 1;
+				System.out.println("congrats your answer is correct");
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
